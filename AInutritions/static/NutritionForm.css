@@ -1,0 +1,377 @@
+@media only screen and (min-width: 501px) {
+    body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    background-color: #f5fff5; 
+    color: #000; 
+    direction: rtl;
+}
+.container {
+    text-align: right;
+    width: 84%;
+    padding: 0 20px;
+}
+h1 {
+    font-size: 2em;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #000; 
+}
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000; 
+}
+form {
+    background-color: #f1f8f1; /* Very light lemon green background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 99%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 40%;
+    display: inline-grid;
+    margin-right: 6.3%;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.2em;
+    color: #1b5e20; /* Deep green for labels */
+    margin-bottom: 10px;
+}
+
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #4caf50; /* Medium green border */
+    border-radius: 5px;
+    font-size: 1em;
+    color: #2e7d32; /* Dark green for text */
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.form-group input[type="radio"] {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.form-group input[type="radio"] + label {
+    display: inline-block;
+    font-size: 1em;
+    color: #4caf50; /* Medium green for radio labels */
+    margin-right: 15px;
+}
+
+.text-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for text inputs */
+    gap: 20px;
+}
+
+.text-inputs .form-group {
+    margin-bottom: 0; /* Remove bottom margin for grid items */
+}
+
+button[type="submit"] {
+    display: block;
+    width: 8%;
+    margin-right: 45.5%;
+    padding: 2px;
+    background-color: transparent;
+    border: 2px solid #00af6f;
+    color: #1b5e20;
+    font-size: 1.2em;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #4fffd4;
+    color: #020063;
+}
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: 2px solid #23c29d;
+    color: #23c29d;
+    font-size: 1.5em;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.menu-toggle:hover
+ {
+    background-color: #0acad4;
+    color: #c9ffb7;
+}
+.close-button {
+    background-color: transparent;
+    border: 2px solid #23c29d;
+    color: #23c29d;
+    font-size: 1.5em;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: block;
+    margin: 20px auto 20px 20px;
+}
+.close-button:hover {
+    background-color: #0acad4;
+    color: #f5002a;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #f1f8f1; /* Very light lemon green background */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+}
+.sidebar.open {
+    right: 0;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+}
+.sidebar li {
+    margin-bottom: 20px;
+}
+.sidebar a {
+    text-decoration: none;
+    font-size: 1em;
+    color: #1b5e20; /* Deep green for links */
+    padding: 10px;
+    display: block;
+    border: 1px solid #c8e6c9; /* Light lemon green border */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.sidebar a:hover {
+    background-color: #0acad4;
+    color: #fff;
+}
+.icon-menu{
+    width: 32px;
+}
+.icon-a{
+    width: 32px;
+    position: absolute;
+    margin-right: 60%;
+}
+}
+@media only screen and (max-width: 500px) {
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-family: 'Noto Sans Arabic', sans-serif;
+        background-color: #f5fff5; 
+        color: #000; 
+        direction: rtl;
+    }
+    .container {
+        text-align: right;
+        width: 84%;
+        padding: 0 20px;
+    }
+    .container h1 {
+        font-size: 1.5em;
+        margin-right: 20%;
+        margin-top: 10px;
+        margin-bottom: 0;
+        text-align: center;
+        color: #000;
+        
+    }
+    .container p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        text-align: center;
+        margin-bottom: 40px;
+        color: #000;
+        margin-right: 20%;
+        
+    }
+    form {
+        background-color: #f1f8f1; /* Very light lemon green background */
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 99%;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+        width: 40%;
+        display: inline-grid;
+        margin-right: 6.3%;
+    }
+    
+    .form-group label {
+        display: block;
+        font-size: 1.2em;
+        color: #1b5e20; /* Deep green for labels */
+        margin-bottom: 10px;
+    }
+    
+    .form-group input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #4caf50; /* Medium green border */
+        border-radius: 5px;
+        font-size: 1em;
+        color: #2e7d32; /* Dark green for text */
+        background-color: #fff;
+        box-sizing: border-box;
+    }
+    
+    .form-group input[type="radio"] {
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+    
+    .form-group input[type="radio"] + label {
+        display: inline-block;
+        font-size: 1em;
+        color: #4caf50; /* Medium green for radio labels */
+        margin-right: 15px;
+    }
+    
+    .text-inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns for text inputs */
+        gap: 20px;
+    }
+    
+    .text-inputs .form-group {
+        margin-bottom: 0; /* Remove bottom margin for grid items */
+    }
+    
+    button[type="submit"] {
+        display: block;
+        width: 20%;
+        margin-right: 36%;
+        padding: 2px;
+        background-color: transparent;
+        border: 2px solid #00af6f;
+        color: #1b5e20;
+        font-size: 1.2em;
+        font-family: 'Noto Sans Arabic', sans-serif;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    button[type="submit"]:hover {
+        background-color: #4fffd4;
+        color: #020063;
+    }
+    .menu-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        padding: 4px 3px;
+        background-color: transparent;
+        border: 2px solid #23c29d;
+        color: #23c29d;
+        font-size: 1.5em;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .menu-toggle:hover
+     {
+        background-color: #0acad4;
+        color: #c9ffb7;
+    }
+    .close-button {
+        background-color: transparent;
+        border: 2px solid #23c29d;
+        color: #23c29d;
+        font-size: 1.5em;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        display: block;
+        margin: 20px auto 20px 20px;
+    }
+    .close-button:hover {
+        background-color: #0acad4;
+        color: #f5002a;
+    }
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #f1f8f1; /* Very light lemon green background */
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease-in-out;
+    }
+    .sidebar.open {
+        right: 0;
+    }
+    .sidebar ul {
+        list-style: none;
+        padding: 20px;
+        margin: 0;
+    }
+    .sidebar li {
+        margin-bottom: 20px;
+    }
+    .sidebar a {
+        text-decoration: none;
+        font-size: 1em;
+        color: #1b5e20; /* Deep green for links */
+        padding: 10px;
+        display: block;
+        border: 1px solid #c8e6c9; /* Light lemon green border */
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .sidebar a:hover {
+        background-color: #0acad4;
+        color: #fff;
+    }
+    .icon-menu{
+        width: 38px;
+    }
+    .icon-a{
+        width: 32px;
+        position: absolute;
+        margin-right: 60%;
+    }
+}
+
+
+

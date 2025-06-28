@@ -1,0 +1,142 @@
+{% load static %}
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>جدول نیاز غذایی شما</title>
+    <!-- Link to Google Fonts for Noto Sans Arabic -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="{% static 'Icons/apple.png' %}"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="{% static 'NutritionPredict.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>نتایج</h1>
+      <p>جدول اول اطلاعات شماست و جدول دوم پیش بینی مدل برای شما</p>
+      <div class="tablesGrid">
+        <table class="table1">
+          <thead>
+            <tr>
+              <th>شاخصه</th>
+              <th>مقدار</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>جنسیت</td>
+              <td>{{ Gender }}</td>
+            </tr>
+            <tr>
+              <td>سن</td>
+              <td>{{ Age }}</td>
+            </tr>
+            <tr>
+              <td>قد</td>
+              <td>{{ Height|floatformat:0 }}</td>
+            </tr>
+            <tr>
+              <td>وزن</td>
+              <td>{{ Weight|floatformat:0 }}</td>
+            </tr>
+            <tr>
+              <td>فعالیت</td>
+              <td>{{ Activitylevel }}</td>
+            </tr>
+            <tr>
+              <td>شاخص توده بدنی</td>
+              <td>{{ BMI|floatformat:1 }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table2">
+          <thead>
+            <tr>
+              <th>ردیف</th>
+              <th>ماده مغذی</th>
+              <th>نیاز پیش بینی شده</th>
+              <th>واحد</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>نیاز کالری روزانه</td>
+              <td>{{ ECDN|floatformat:0 }}</td>
+              <td>کالری</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>چربی</td>
+              <td>{{ FATMIN|floatformat:0 }} - {{ FATMAX|floatformat:0 }}</td>
+              <td>گرم</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>کربوهیدرات</td>
+              <td>
+                {{ CARBOHYDRATEMIN|floatformat:0 }} -
+                {{CARBOHYDRATEMAX|floatformat:0 }}
+              </td>
+              <td>گرم</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>فیبر</td>
+              <td>{{ TOTALFIBER|floatformat:0 }}</td>
+              <td>گرم</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>پروتئین</td>
+              <td>{{ PROTEIN|floatformat:0 }}</td>
+              <td>گرم</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Toggle Button -->
+    <button class="menu-toggle">
+      <img class="icon-menu" src="{% static "/Icons/hamburger.png" %}"/>
+    </button>
+    <!-- Sidebar Menu -->
+    <nav class="sidebar">
+      <button class="close-button">×</button>
+      <ul>
+        <li>
+          <a href="http://127.0.0.1:8000/"
+            ><img class="icon-a" src="{% static "/Icons/home.png" %}"/> صفحه
+            اصلی</a
+          >
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/NutritionForm"
+            ><img class="icon-a" src="{% static "/Icons/fastfood.png" %}"/> درشت
+            مغذی</a
+          >
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/ExerciseForm"
+            ><img class="icon-a" src="{% static "/Icons/realfood.png" %}"/> ورزش
+            و تمرین</a
+          >
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/About"
+            ><img class="icon-a" src="{% static "/Icons/info.png" %}"/> درباره
+            ما</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <script src="{% static 'Menu.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >درباره این پروژه</title>
+    <link rel="stylesheet" href="{% static 'About.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      rel="icon"
+      href="{% static 'Icons/apple.png' %}"
+      type="image/x-icon"
+    />
+</head>
+<body>
+    <div class="header">
+      <h1>درباره این پروژه</h1>
+    </div>
+    <div class="container">
+      <p>این یک پروژه دانشگاهی است که توسط سبحان شهنواز طراحی و توسعه داده شده است.
+        این پروژه برای درس پروژه(نهایی) توسعه داده شده است</p>
+        <p> استاد این پروژه دکتر مسعود دادگر، دکترای هوش مصنوعی، مدیر گروه کامپیوتر، در دانشگاه ملی مهارت، شهید باهنر شیراز است.
+             </p>
+             <p>در این پروژه از چند مدل آموزش داده شده توسط دانشجوی نام برده استفاده شده است. کاربرد این پروژه 
+              در حوزه سلامت و بهداشت میباشد. </p>
+    </div>
+
+    <button class="menu-toggle">
+      <img class="icon-menu" src="{% static "/Icons/hamburger.png" %}"/>
+    </button>
+    <nav class="sidebar">
+      <button class="close-button">×</button>
+      <ul>
+        <li>
+          <a href="http://127.0.0.1:8000/"
+            ><img class="icon-a" src="{% static "/Icons/home.png" %}"/> صفحه
+            اصلی</a
+          >
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/NutritionForm"
+            ><img class="icon-a" src="{% static "/Icons/fastfood.png" %}"/> درشت مغذی</a
+          >
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/ExerciseForm"
+            ><img class="icon-a" src="{% static "/Icons/realfood.png" %}"/> ورزش و تمرین</a
+          >
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/About"
+            ><img class="icon-a" src="{% static "/Icons/info.png" %}"/> درباره
+            ما</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.toggle('open');
+        });
+        document.querySelector('.close-button').addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.remove('open');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+{% load static %}
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فرم عادی</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="{% static 'Icons/apple.png' %}"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="{% static 'NutritionForm.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>فرم درشت مغذی ها</h1>
+      <p>اطلاعات خود را وارد کنید.</p>
+      <form action="NutritionPredict">
+        <!-- Input 1: Radio with 2 options -->
+        <div class="form-group">
+          <label> جنسیت:</label>
+          <label
+            ><input type="radio" name="Gender" value="1" required /> مرد</label
+          >
+          <label><input type="radio" name="Gender" value="0" /> زن</label>
+        </div>
+        <!-- Input 2: Float number -->
+        <div class="form-group">
+          <label for="float1">قد:</label>
+          <input type="number" id="float1" name="Height" step="0.01" required />
+        </div>
+        <!-- Input 3: Float number -->
+        <div class="form-group">
+          <label for="float2">وزن:</label>
+          <input type="number" id="float2" name="Weight" step="0.01" required />
+        </div>
+        <!-- Input 4: Integer number -->
+        <div class="form-group">
+          <label for="int1"> سن:</label>
+          <input type="number" id="int1" name="Age" step="1" required />
+        </div>
+        <!-- Input 5: Radio with 4 options -->
+        <div class="form-group">
+          <label>فعالیت فیزیکی :</label>
+          <label
+            ><input type="radio" name="Activity" value="1" required />
+            غیرفعال
+          </label>
+          <label
+            ><input type="radio" name="Activity" value="1.4" /> کمی فعال</label
+          >
+          <label><input type="radio" name="Activity" value="1.6" /> فعال</label>
+          <label
+            ><input type="radio" name="Activity" value="1.9" /> بسیار
+            فعال</label
+          >
+        </div>
+        <button type="submit">ثبت</button>
+      </form>
+    </div>
+    <button class="menu-toggle">
+      <img class="icon-menu" src="{% static "/Icons/hamburger.png" %}"/>
+    </button>
+    <nav class="sidebar">
+      <button class="close-button">×</button>
+      <ul>
+        <li>
+          <a href="http://127.0.0.1:8000/"
+            ><img class="icon-a" src="{% static "/Icons/home.png" %}"/> صفحه
+            اصلی</a
+          >
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/NutritionForm"
+            ><img class="icon-a" src="{% static "/Icons/fastfood.png" %}"/> درشت
+            مغذی</a
+          >
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/ExerciseForm"
+            ><img class="icon-a" src="{% static "/Icons/realfood.png" %}"/> ورزش
+            و تمرین</a
+          >
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/About"
+            ><img class="icon-a" src="{% static "/Icons/info.png" %}"/> درباره
+            ما</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <!-- Link to external JS file -->
+    <script src="{% static 'Menu.js' %}"></script>
+  </body>
+</html>

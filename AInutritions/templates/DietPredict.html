@@ -1,0 +1,125 @@
+{% load static %}
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>جدول ورزش های پیشنهادی شما</title>
+    <!-- Link to Google Fonts for Noto Sans Arabic -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="{% static 'Icons/apple.png' %}"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="{% static 'DietPredict.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>نتایج</h1>
+      <p>جدول اول اطلاعات شماست و جدول دوم پیش بینی مدل برای شما</p>
+      <div class="tablesGrid">
+        <table class="table1">
+          <thead>
+            <tr>
+              <th>شاخصه</th>
+              <th>جنسیت</th>
+              <th>سن</th>
+              <th>قد</th>
+              <th>وزن</th>
+              <th>وضعیت بدن</th>
+              <th>ست ورزشی</th>
+              <th>شاخص توده بدنی</th>
+              <th>بیماری ها:</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>مقدار</th>
+              <td>{{ Gender }}</td>
+              <td>{{ Age }}</td>
+              <td>{{ Height|floatformat:0 }}</td>
+              <td>{{ Weight|floatformat:0 }}</td>
+              <td>
+                {% if IsLevel == 1 %} {{ Level}} {% else %} {{ Level}}❌ (
+                {{RealLevel}} ) {% endif %}
+              </td>
+              <td>
+                {{ TextExerciseLabel }}
+                <button class="infoExer">
+                  <img class="icon-b" src="{% static "/Icons/info.png" %}"/>
+                </button>
+              </td>
+
+              <td>{{ BMI|floatformat:1 }}</td>
+              <td>{{ Diseases }}</td>
+            </tr>
+            <tr></tr>
+          </tbody>
+        </table>
+        <table class="table2">
+          <thead>
+            <tr>
+              <th>عنوان</th>
+              <th>نوع رژیم</th>
+              <th>سبزیجات</th>
+              <th>منابع پروتئین</th>
+              <th>نوشیدنی ها</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>حالت پیش بینی شده</th>
+              <td>{{ SetNumber }}</td>
+              <td>{{ Map.Veggies }}</td>
+              <td>{{ Map.Protein }}</td>
+              <td>{{ Map.Juice}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Toggle Button -->
+    <button class="menu-toggle">
+      <img class="icon-menu" src="{% static "/Icons/hamburger.png" %}"/>
+    </button>
+    <!-- Sidebar Menu -->
+    <nav class="sidebar">
+      <button class="close-button">×</button>
+      <ul>
+        <li>
+          <a href="http://127.0.0.1:8000/"
+            ><img class="icon-a" src="{% static "/Icons/home.png" %}"/> صفحه
+            اصلی</a
+          >
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/NutritionForm"
+            ><img class="icon-a" src="{% static "/Icons/fastfood.png" %}"/> درشت
+            مغذی</a
+          >
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/ExerciseForm"
+            ><img class="icon-a" src="{% static "/Icons/realfood.png" %}"/> ورزش
+            و تمرین</a
+          >
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/About"
+            ><img class="icon-a" src="{% static "/Icons/info.png" %}"/> درباره
+            ما</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="infotab">
+      <button class="close-Info">×</button>
+      <p>{{ MapEx.TextPersian }}</p>
+    </div>
+    <script src="{% static 'Menu.js' %}"></script>
+  </body>
+</html>
